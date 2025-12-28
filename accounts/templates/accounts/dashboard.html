@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/dashboard.css' %}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">MyApp</div>
+        <div class="nav-right">
+            <span>{{ request.user.username }}</span>
+            <a href="{% url 'accounts:logout' %}" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h2>Welcome, {{ request.user.username }} 👋</h2>
+        <p class="subtitle">This is your dashboard</p>
+
+        <!-- CARDS -->
+        <div class="cards">
+            <div class="card">
+                <h3>Profile</h3>
+                <p>View and update your profile</p>
+            </div>
+
+            <div class="card">
+                <h3>Activity</h3>
+                <p>Recent login activity</p>
+            </div>
+
+            <div class="card">
+                <h3>Settings</h3>
+                <p>Manage your account</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

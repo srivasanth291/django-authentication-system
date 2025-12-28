@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
+</head>
+
+<body>
+
+  
+
+<form  method="post">
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color: red;">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+  {% csrf_token %}
+  <h2 style="text-align: center;">Login</h2>
+  <input type="text" name="username" placeholder="Username">
+  <br><br>
+
+  <input type="password" name="password" placeholder="Password">
+  <br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+
+</body>
+</html>
